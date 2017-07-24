@@ -1,12 +1,12 @@
-var api= "https://fcc-weather-api.glitch.me/api/current?";
-var lat, lon;
+
 
 (function(){
+	 const appId = '927c55ca627f5c91bf490b95dd8ce7ab';
 
 	if(navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(function(position){
-			var lat= "lat=" + position.coords.latitude;
-			var lon= "lon=" + position.coords.longitude;
+			var lat= position.coords.latitude;
+			var lon= position.coords.longitude;
 			getWeather(lat, lon);
 		});
 	}
@@ -15,7 +15,11 @@ var lat, lon;
 	}
 
 	function getWeather(lat, lon){
-		var urlString = api + lat + "&" + lon;
+		var urlString = 'http://api.openweathermap.org/data/2.5/weather?' + 
+        'lat='+ lat +
+        '&lon='+ lon +
+        '&units=metric' +
+        '&appId=' + appId;
 		$.ajax({
 			url: urlString,
 			success: function(result){
@@ -40,9 +44,11 @@ var lat, lon;
 				var sunset_time= hour1 +":"+minutes1+" PM";
 				$("#sunset").text("Sunset: "+sunset_time);
 
-
 				$("#humidity").text("Humidity: " + result.main.humidity + "%");
-				$("#wind").text("Wind Speed: "+ result.wind.speed + "m/s")
+				$("#wind").text("Wind Speed: "+ result.wind.speed + "m/s");
+
+				$("#sunIcon").attr('src','assets/img/icons/' + result.weather[0].icon + '.png');
+
 			}
 		});
 	}
