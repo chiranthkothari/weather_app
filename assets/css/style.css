@@ -1,0 +1,86 @@
+body{
+	font-family: seouil;
+}
+@font-face{
+	font-family: seouil;
+	src: url('../fonts/seouil.otf');
+	src: url('../fonts/seouil.ttf');
+	src: url('../fonts/seouil.woff');
+}
+#main{
+	width: 100%;
+	height: 100%;
+	background: #FF9229;
+	color: rgb(255,255,255);
+	padding-bottom: 5px;
+}
+.temp-icon{
+	padding-top: 60px;
+}
+#temp{
+	font-size: 50px;
+}
+#description{
+	font-size: 20px;
+}
+#sunrise{
+	font-size: 20px;
+}
+#sunset{
+	font-size: 20px;
+}
+#sunIcon{
+	width: 15%;
+	padding-top: 15px;
+	float: right;
+}
+@media screen and (max-width: 640px){
+	#sunIcon{
+		width: 32%;
+	}
+}
+.city-container{
+	max-width: 40%;
+	background: #F2792A;
+	color: white;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 80px;
+	margin-bottom: 70px;
+	border-radius: 100px;
+}
+@media screen and (max-width: 640px){
+	.city-container{
+		max-width: 80%;
+	}
+}
+.place{
+	font-size: 24px;
+	padding: 10px 10px;
+}
+.white-container{
+	background: rgb(255,255,255);
+	color: #FF9229;
+	width: 97%;
+	margin-bottom: 60px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.white-text{
+	font-size: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	/*font-weight: bold;*/
+}
+@media screen and (max-width: 640px){
+	.white-text{
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 25px;
+	}
+}
+
+.footer-text{
+	position: relative;
+	bottom: 0px;
+}
